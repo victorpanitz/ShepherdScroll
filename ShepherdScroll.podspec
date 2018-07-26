@@ -8,7 +8,7 @@ s.requires_arc = true
 s.swift_version = '4.1'
 s.version = '0.0.2'
 
-s.license = "MIT"
+s.license = 'MIT'
 
 s.author = { 'Victor Panitz Magalhães' => 'victorpanitz@gmail.com' }
 

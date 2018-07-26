@@ -9,7 +9,7 @@ enum Orientation {
     case vertical, horizontal
 }
 
-class ShepherdScrollView: UIScrollView {
+public class ShepherdScrollView: UIScrollView {
     
     private lazy var viewControllers = [BaseAnimatedViewController]()
     private lazy var size = CGSize()
@@ -32,7 +32,7 @@ class ShepherdScrollView: UIScrollView {
         setupConstraints()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -97,7 +97,7 @@ class ShepherdScrollView: UIScrollView {
 }
 
 extension ShepherdScrollView: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if contentOffset.y < 0 || contentOffset.x < 0 { setContentOffset(.zero, animated: false) }
         guard (currentPos() + 1) < viewControllers.count else { return }
         animate(viewToAnimate, to: animationStep())

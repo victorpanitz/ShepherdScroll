@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		169D3D9A210A108F004859EE /* ShepherdScroll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 169D3D90210A108F004859EE /* ShepherdScroll.framework */; };
 		169D3D9F210A108F004859EE /* SheperdScrollTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169D3D9E210A108F004859EE /* SheperdScrollTests.swift */; };
-		169D3DA1210A108F004859EE /* SheperdScroll.h in Headers */ = {isa = PBXBuildFile; fileRef = 169D3D93210A108F004859EE /* SheperdScroll.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		169D3DA1210A108F004859EE /* ShepherdScroll.h in Headers */ = {isa = PBXBuildFile; fileRef = 169D3D93210A108F004859EE /* ShepherdScroll.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		169D3DAF210A111A004859EE /* ShepherdScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169D3DAE210A111A004859EE /* ShepherdScrollView.swift */; };
 		169D3DBC210A271A004859EE /* BaseAnimatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169D3DBB210A271A004859EE /* BaseAnimatedViewController.swift */; };
 /* End PBXBuildFile section */
@@ -26,7 +26,7 @@
 
 /* Begin PBXFileReference section */
 		169D3D90210A108F004859EE /* ShepherdScroll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ShepherdScroll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		169D3D93210A108F004859EE /* SheperdScroll.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SheperdScroll.h; sourceTree = "<group>"; };
+		169D3D93210A108F004859EE /* ShepherdScroll.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShepherdScroll.h; sourceTree = "<group>"; };
 		169D3D94210A108F004859EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		169D3D99210A108F004859EE /* ShepherdScrollTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShepherdScrollTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		169D3D9E210A108F004859EE /* SheperdScrollTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheperdScrollTests.swift; sourceTree = "<group>"; };
@@ -77,7 +77,7 @@
 			children = (
 				169D3DB8210A266B004859EE /* BaseViewController */,
 				169D3DAD210A111A004859EE /* ScrollView */,
-				169D3D93210A108F004859EE /* SheperdScroll.h */,
+				169D3D93210A108F004859EE /* ShepherdScroll.h */,
 				169D3D94210A108F004859EE /* Info.plist */,
 			);
 			path = ShepherdScroll;
@@ -116,7 +116,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				169D3DA1210A108F004859EE /* SheperdScroll.h in Headers */,
+				169D3DA1210A108F004859EE /* ShepherdScroll.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

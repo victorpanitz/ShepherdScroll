@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import SheperdScroll
+@testable import ShepherdScroll
 
 class SheperdScrollTests: XCTestCase {
     

@@ -8,13 +8,13 @@
 
 import UIKit
 
-class BaseAnimatedViewController: UIViewController {
+public class BaseAnimatedViewController: UIViewController {
 
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
     }
 
     // step = 0...1
-    func animate(step: CGFloat) {}
+    public func animate(step: CGFloat) {}
     
 }

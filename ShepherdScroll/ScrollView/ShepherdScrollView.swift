@@ -1,11 +1,11 @@
 import Foundation
 import UIKit
 
-enum ViewToAnimate {
+public enum ViewToAnimate {
     case current, next
 }
 
-enum Orientation {
+public enum Orientation {
     case vertical, horizontal
 }
 
@@ -18,7 +18,7 @@ public class ShepherdScrollView: UIScrollView {
     private lazy var orientation = Orientation.horizontal
     private lazy var offset: CGFloat = 0.0
     
-    init(controller:UIViewController, viewControllers: [BaseAnimatedViewController], size: CGSize, viewToAnimate: ViewToAnimate = .current, orientation: Orientation = .horizontal, offset: CGFloat = 0.0) {
+    public init(controller:UIViewController, viewControllers: [BaseAnimatedViewController], size: CGSize, viewToAnimate: ViewToAnimate = .current, orientation: Orientation = .horizontal, offset: CGFloat = 0.0) {
         super.init(frame: .zero)
         self.viewControllers = viewControllers
         self.size = size

@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:SheperdScroll.xcodeproj">
+      location = "self:/Users/ilegra.victor/Desktop/SheperdScroll/ShepherdScroll.xcodeproj">
    </FileRef>
 </Workspace>

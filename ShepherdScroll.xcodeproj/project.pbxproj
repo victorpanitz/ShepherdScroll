@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		169D3D9A210A108F004859EE /* SheperdScroll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 169D3D90210A108F004859EE /* SheperdScroll.framework */; };
+		169D3D9A210A108F004859EE /* ShepherdScroll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 169D3D90210A108F004859EE /* ShepherdScroll.framework */; };
 		169D3D9F210A108F004859EE /* SheperdScrollTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169D3D9E210A108F004859EE /* SheperdScrollTests.swift */; };
 		169D3DA1210A108F004859EE /* SheperdScroll.h in Headers */ = {isa = PBXBuildFile; fileRef = 169D3D93210A108F004859EE /* SheperdScroll.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		169D3DAF210A111A004859EE /* ShepherdScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169D3DAE210A111A004859EE /* ShepherdScrollView.swift */; };
+		169D3DBC210A271A004859EE /* BaseAnimatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169D3DBB210A271A004859EE /* BaseAnimatedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,12 +25,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		169D3D90210A108F004859EE /* SheperdScroll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SheperdScroll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		169D3D90210A108F004859EE /* ShepherdScroll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ShepherdScroll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		169D3D93210A108F004859EE /* SheperdScroll.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SheperdScroll.h; sourceTree = "<group>"; };
 		169D3D94210A108F004859EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		169D3D99210A108F004859EE /* SheperdScrollTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SheperdScrollTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		169D3D99210A108F004859EE /* ShepherdScrollTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShepherdScrollTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		169D3D9E210A108F004859EE /* SheperdScrollTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheperdScrollTests.swift; sourceTree = "<group>"; };
 		169D3DA0210A108F004859EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		169D3DAE210A111A004859EE /* ShepherdScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShepherdScrollView.swift; sourceTree = "<group>"; };
+		169D3DBB210A271A004859EE /* BaseAnimatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAnimatedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,7 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				169D3D9A210A108F004859EE /* SheperdScroll.framework in Frameworks */,
+				169D3D9A210A108F004859EE /* ShepherdScroll.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,8 +57,8 @@
 		169D3D86210A108F004859EE = {
 			isa = PBXGroup;
 			children = (
-				169D3D92210A108F004859EE /* SheperdScroll */,
-				169D3D9D210A108F004859EE /* SheperdScrollTests */,
+				169D3D92210A108F004859EE /* ShepherdScroll */,
+				169D3D9D210A108F004859EE /* ShepherdScrollTests */,
 				169D3D91210A108F004859EE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -62,28 +66,47 @@
 		169D3D91210A108F004859EE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				169D3D90210A108F004859EE /* SheperdScroll.framework */,
-				169D3D99210A108F004859EE /* SheperdScrollTests.xctest */,
+				169D3D90210A108F004859EE /* ShepherdScroll.framework */,
+				169D3D99210A108F004859EE /* ShepherdScrollTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		169D3D92210A108F004859EE /* SheperdScroll */ = {
+		169D3D92210A108F004859EE /* ShepherdScroll */ = {
 			isa = PBXGroup;
 			children = (
+				169D3DB8210A266B004859EE /* BaseViewController */,
+				169D3DAD210A111A004859EE /* ScrollView */,
 				169D3D93210A108F004859EE /* SheperdScroll.h */,
 				169D3D94210A108F004859EE /* Info.plist */,
 			);
-			path = SheperdScroll;
+			path = ShepherdScroll;
 			sourceTree = "<group>";
 		};
-		169D3D9D210A108F004859EE /* SheperdScrollTests */ = {
+		169D3D9D210A108F004859EE /* ShepherdScrollTests */ = {
 			isa = PBXGroup;
 			children = (
 				169D3D9E210A108F004859EE /* SheperdScrollTests.swift */,
 				169D3DA0210A108F004859EE /* Info.plist */,
 			);
-			path = SheperdScrollTests;
+			path = ShepherdScrollTests;
+			sourceTree = "<group>";
+		};
+		169D3DAD210A111A004859EE /* ScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				169D3DAE210A111A004859EE /* ShepherdScrollView.swift */,
+			);
+			name = ScrollView;
+			path = ../../../Documents/animatedscrollviewcontroller/ScrollViewTests/Application/ScrollView;
+			sourceTree = "<group>";
+		};
+		169D3DB8210A266B004859EE /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				169D3DBB210A271A004859EE /* BaseAnimatedViewController.swift */,
+			);
+			path = BaseViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -100,9 +123,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		169D3D8F210A108F004859EE /* SheperdScroll */ = {
+		169D3D8F210A108F004859EE /* ShepherdScroll */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 169D3DA4210A108F004859EE /* Build configuration list for PBXNativeTarget "SheperdScroll" */;
+			buildConfigurationList = 169D3DA4210A108F004859EE /* Build configuration list for PBXNativeTarget "ShepherdScroll" */;
 			buildPhases = (
 				169D3D8B210A108F004859EE /* Sources */,
 				169D3D8C210A108F004859EE /* Frameworks */,
@@ -113,14 +136,14 @@
 			);
 			dependencies = (
 			);
-			name = SheperdScroll;
+			name = ShepherdScroll;
 			productName = SheperdScroll;
-			productReference = 169D3D90210A108F004859EE /* SheperdScroll.framework */;
+			productReference = 169D3D90210A108F004859EE /* ShepherdScroll.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		169D3D98210A108F004859EE /* SheperdScrollTests */ = {
+		169D3D98210A108F004859EE /* ShepherdScrollTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 169D3DA7210A108F004859EE /* Build configuration list for PBXNativeTarget "SheperdScrollTests" */;
+			buildConfigurationList = 169D3DA7210A108F004859EE /* Build configuration list for PBXNativeTarget "ShepherdScrollTests" */;
 			buildPhases = (
 				169D3D95210A108F004859EE /* Sources */,
 				169D3D96210A108F004859EE /* Frameworks */,
@@ -131,9 +154,9 @@
 			dependencies = (
 				169D3D9C210A108F004859EE /* PBXTargetDependency */,
 			);
-			name = SheperdScrollTests;
+			name = ShepherdScrollTests;
 			productName = SheperdScrollTests;
-			productReference = 169D3D99210A108F004859EE /* SheperdScrollTests.xctest */;
+			productReference = 169D3D99210A108F004859EE /* ShepherdScrollTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -154,7 +177,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 169D3D8A210A108F004859EE /* Build configuration list for PBXProject "SheperdScroll" */;
+			buildConfigurationList = 169D3D8A210A108F004859EE /* Build configuration list for PBXProject "ShepherdScroll" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -166,8 +189,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				169D3D8F210A108F004859EE /* SheperdScroll */,
-				169D3D98210A108F004859EE /* SheperdScrollTests */,
+				169D3D8F210A108F004859EE /* ShepherdScroll */,
+				169D3D98210A108F004859EE /* ShepherdScrollTests */,
 			);
 		};
 /* End PBXProject section */
@@ -194,6 +217,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				169D3DBC210A271A004859EE /* BaseAnimatedViewController.swift in Sources */,
+				169D3DAF210A111A004859EE /* ShepherdScrollView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,7 +235,7 @@
 /* Begin PBXTargetDependency section */
 		169D3D9C210A108F004859EE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 169D3D8F210A108F004859EE /* SheperdScroll */;
+			target = 169D3D8F210A108F004859EE /* ShepherdScroll */;
 			targetProxy = 169D3D9B210A108F004859EE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -387,6 +412,7 @@
 		169D3DA8210A108F004859EE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SheperdScrollTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -404,6 +430,7 @@
 		169D3DA9210A108F004859EE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SheperdScrollTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -421,7 +448,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		169D3D8A210A108F004859EE /* Build configuration list for PBXProject "SheperdScroll" */ = {
+		169D3D8A210A108F004859EE /* Build configuration list for PBXProject "ShepherdScroll" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				169D3DA2210A108F004859EE /* Debug */,
@@ -430,7 +457,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		169D3DA4210A108F004859EE /* Build configuration list for PBXNativeTarget "SheperdScroll" */ = {
+		169D3DA4210A108F004859EE /* Build configuration list for PBXNativeTarget "ShepherdScroll" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				169D3DA5210A108F004859EE /* Debug */,
@@ -439,7 +466,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		169D3DA7210A108F004859EE /* Build configuration list for PBXNativeTarget "SheperdScrollTests" */ = {
+		169D3DA7210A108F004859EE /* Build configuration list for PBXNativeTarget "ShepherdScrollTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				169D3DA8210A108F004859EE /* Debug */,

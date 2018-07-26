@@ -6,9 +6,7 @@ s.name = "ShepherdScroll"
 s.summary = "ShepherdScroll implements a custom Scroll View which provides easy handling of animation over child view controllers during the scroll."
 s.requires_arc = true
 
-
 s.version = "0.0.1"
-
 
 s.license = "MIT"
 

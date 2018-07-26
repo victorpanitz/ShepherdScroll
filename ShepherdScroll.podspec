@@ -5,7 +5,7 @@ s.ios.deployment_target = '9.0'
 s.name = "ShepherdScroll"
 s.summary = "ShepherdScroll implements a custom Scroll View which provides easy handling of animation over child view controllers during the scroll."
 s.requires_arc = true
-
+s.swift_version = '4.1'
 s.version = "0.0.1"
 
 s.license = "MIT"

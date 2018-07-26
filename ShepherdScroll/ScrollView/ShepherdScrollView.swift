@@ -105,8 +105,8 @@ extension ShepherdScrollView: UIScrollViewDelegate {
     
     private func animate(_ view: ViewToAnimate , to step: CGFloat) {
         view == .current ?
-            viewControllers[currentPos()].animate(factor: step) :
-            viewControllers[currentPos()+1].animate(factor: step)
+            viewControllers[currentPos()].animate(step: step) :
+            viewControllers[currentPos()+1].animate(step: step)
     }
     
     private func animationStep() -> CGFloat {

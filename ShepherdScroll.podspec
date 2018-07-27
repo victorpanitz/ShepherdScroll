@@ -12,9 +12,9 @@ s.license = 'MIT'
 
 s.author = { 'Victor Panitz Magalhães' => 'victorpanitz@gmail.com' }
 
-s.homepage = 'https://bitbucket.org/victorpanitz/shepherdscroll/'
+s.homepage = 'https://github.com/victorpanitz/ShepherdScroll'
 
-s.source = { :git => 'https://victorpanitz@bitbucket.org/victorpanitz/shepherdscroll.git', :tag => '0.0.7' }
+s.source = { :git => 'https://github.com/victorpanitz/ShepherdScroll.git', :tag => '0.0.7' }
 
 s.framework = "UIKit"
 

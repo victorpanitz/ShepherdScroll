@@ -31,7 +31,9 @@ class SheepAViewController: BaseAnimatedViewController {
 ```
 ##### Using a BaseAnimatedViewController you'll be able to control your own animation as you want! Exactly! Shepherd Scroll doesn't know what the view controller's content is, giving you the freedom to create animations, parallax and much more on your way.
 
-##### To do that, override the method animated() where you'll receive a value between 0 and 1. See this value as a timeline from 0% to 100% of the animation. With this value you'll get nice results during the scroll (no matter what direction you scroll).
+##### To do that, override the method animated() where you'll receive a value between 0 and 1. See this value as a timeline from 0% to 100% of the animation. With this value you'll get nice results during the scroll (no matter what direction you scroll). 
+
+> ### Use your imagination to do whatever you want with this percentage like translate images, views, animate graphs, change alpha's and much more.
 
 ```
 override func animate(step: CGFloat) {
@@ -40,6 +42,7 @@ override func animate(step: CGFloat) {
             .concatenating(CGAffineTransform(translationX: 0, y: 200 * step))
 }
 ```
+
 
 > #### Here is the full example:
 

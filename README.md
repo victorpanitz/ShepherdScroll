@@ -12,26 +12,26 @@ pod 'ShepherdScroll' ~> '0.0.7'
 #### 2. Run pod install
 
 ## Shepherding the sheep
-##### After install your pod, import Shephered Scroll to the UIViewController which the scroll will be embbed in (certify you have builded your application before that).
+##### After install your pod, import Shepherd Scroll to the UIViewController which the scroll will be embedded in (make sure you have builded your application before that).
 ```
 import ShepherdScroll
 ```
-> ##### we'll back to this controller soon, but now let's create the sheep's! meeeh 
+> ##### we'll get back to this controller soon, but now let's create the sheep's! meeeh 
 > ##### context.saveGState()
 
 
 ### Ready to rock?
 ##### Firstly you'd need an array of BaseAnimatedViewControllers. Wtsheep is that?
 > ##### Take it easy ma'friend.
-##### Create a standard UIViewController, import ShepherdScroll to that and change the UIViewController inheritance to BaseAnimationViewController.
+##### Create a standard UIViewController, import ShepherdScroll to that and change the UIViewController's inheritance to BaseAnimationViewController.
 ```
 import UIKit
 import ShepherdScroll
 class SheepAViewController: BaseAnimatedViewController {
 ```
-##### Using a BaseAnimatedViewController you'll be able to control your own animation as you want! Exactly! Shepherd Scroll doens't know what's the view controller content giving you freedom to create animations, paralax and much more on your way.
+##### Using a BaseAnimatedViewController you'll be able to control your own animation as you want! Exactly! Shepherd Scroll doesn't know what the view controller's content is, giving you the freedom to create animations, parallax and much more on your way.
 
-##### To do that, overrides the method animated() where you'll receive a value between 0 and 1. See this value as a timeline from 0% to 100% of the animation. with this value you'll get nice results during the scroll (to both sides).
+##### To do that, override the method animated() where you'll receive a value between 0 and 1. See this value as a timeline from 0% to 100% of the animation. With this value you'll get nice results during the scroll (no matter what direction you scroll).
 
 ```
 override func animate(step: CGFloat) {
@@ -86,9 +86,9 @@ class SheepAViewController: BaseAnimatedViewController {
 }
 ```
 
-### Le grand Finale!
+### Le grand finale!
 > ##### context.restoreGState()
-##### You have setted up your Sheep as any basic UIViewController, but here's where the magic happens! 
+##### You have set up your Sheep as any basic UIViewController, but here's where the magic happens! 
 ##### In your main UIViewController you will add the ShepherdScrollView as any UIScrollView but setting some cool parameters.
 
 ```

@@ -119,4 +119,11 @@ private func setupConstraints() {
                 scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
             ])
     }
+```
+
+> ### Vertical mode (You can even define a offset)
+![Alt Text](https://media.giphy.com/media/3oa9SrtaXg57DzB96K/giphy.gif)  
+
+> ### Horizontal mode
+![Alt Text](https://media.giphy.com/media/4MWlhv5u6fQZevvP9G/giphy.gif)
 

@@ -7,7 +7,7 @@
 		<key>DemoShepherdScroll.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>0</integer>
 		</dict>
 		<key>SheperdScroll.xcscheme</key>
 		<dict>
@@ -17,7 +17,25 @@
 		<key>ShepherdScroll.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
+		</dict>
+		<key>ShepherdScrollTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>169D3D8F210A108F004859EE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>169D3D98210A108F004859EE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

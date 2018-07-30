@@ -10,27 +10,70 @@ import XCTest
 @testable import ShepherdScroll
 
 class SheperdScrollTests: XCTestCase {
+
+    private var scrollView: ShepherdScrollView?
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        scrollView = ShepherdScrollView(
+            controller: UIViewController(),
+            viewControllers: [supportViewController(), supportViewController(), supportViewController()],
+            size: CGSize(width: 375, height: 667),
+            viewToAnimate: .current,
+            orientation: randomBool() ? .vertical : .horizontal,
+            offset: 0)
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testCurrentPos() {
+        guard let `scrollView` = scrollView else { return }
+        
+        if scrollView.orientation == .vertical {
+            scrollView.contentOffset.y = 800
+            XCTAssert(scrollView.currentPosition == 1, "Not returning the correct position based on the current state")
+        } else {
+            scrollView.contentOffset.x = 400
+            print(scrollView.currentPosition)
+            XCTAssert(scrollView.currentPosition == 1, "Not returning the correct position based on the current state")
         }
     }
     
+    func testVerticalStep() {
+        guard let `scrollView` = scrollView else { return }
+        
+        scrollView.contentOffset.y = 900
+        if scrollView.orientation == .vertical {
+            XCTAssert(round(1000*scrollView.verticalStep())/1000 == 0.349, "Not returning the correct step value to the current state os parameters")
+        } else {
+            XCTAssert(scrollView.verticalStep() < 0, "Not returning the correct step value to the current state os parameters")
+        }
+    }
+    
+    func testHorizontalStep() {
+        guard let `scrollView` = scrollView else { return }
+
+        scrollView.contentOffset.x = 500
+        if scrollView.orientation == .horizontal {
+            XCTAssert(round(1000*scrollView.horizontalStep())/1000 == 0.333, "Not returning the correct step value to the current state os parameters")
+        } else {
+            XCTAssert(round(1000*scrollView.horizontalStep()) < 0, "Not returning the correct step value to the current state os parameters")
+        }
+    }
+    
+    func testPerformanceExample() {
+        self.measure { }
+    }
 }
+
+extension SheperdScrollTests {
+    func randomBool() -> Bool {
+        return (arc4random_uniform(UInt32(2))) == 0
+    }
+}
+
+class supportViewController: UIViewController, Animatable {
+    func animate(step: CGFloat) {}
+    override func viewDidLoad() {}
+}
+
+

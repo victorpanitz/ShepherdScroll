@@ -9,18 +9,24 @@ public enum Orientation {
     case vertical, horizontal
 }
 
+public protocol ShepherdScrollCustomDelegate: class {
+    func scrollViewDidScroll(_ scrollView: UIScrollView)
+}
+
 public class ShepherdScrollView: UIScrollView {
     
-    private lazy var viewControllers = [BaseAnimatedViewController]()
-    private lazy var size = CGSize()
-    private lazy var controller = UIViewController()
-    private lazy var viewToAnimate = ViewToAnimate.current
-    private lazy var orientation = Orientation.horizontal
-    private lazy var offset: CGFloat = 0.0
+    public lazy var animatableControllers = [Animatable]()
+    public lazy var size = CGSize()
+    public lazy var controller = UIViewController()
+    public lazy var viewToAnimate = ViewToAnimate.current
+    public lazy var orientation = Orientation.horizontal
+    public lazy var offset: CGFloat = 0.0
     
-    public init(controller:UIViewController, viewControllers: [BaseAnimatedViewController], size: CGSize, viewToAnimate: ViewToAnimate = .current, orientation: Orientation = .horizontal, offset: CGFloat = 0.0) {
+    public weak var customDelegate: ShepherdScrollCustomDelegate?
+    
+    public init(controller:UIViewController, viewControllers: [Animatable], size: CGSize, viewToAnimate: ViewToAnimate = .current, orientation: Orientation = .horizontal, offset: CGFloat = 0.0) {
         super.init(frame: .zero)
-        self.viewControllers = viewControllers
+        self.animatableControllers = viewControllers
         self.size = size
         self.controller = controller
         self.viewToAnimate = viewToAnimate
@@ -44,12 +50,12 @@ public class ShepherdScrollView: UIScrollView {
         showsVerticalScrollIndicator = false
         showsHorizontalScrollIndicator = false
         orientation == .horizontal ?
-            contentSize = CGSize(width: (size.width * CGFloat(viewControllers.count)) - (offset*size.width), height: size.height) :
-           (contentSize = CGSize(width: size.width, height: (size.height * CGFloat(viewControllers.count)) - (offset*size.height)))
+            contentSize = CGSize(width: (size.width * CGFloat(animatableControllers.count)) - (offset*size.width), height: size.height) :
+           (contentSize = CGSize(width: size.width, height: (size.height * CGFloat(animatableControllers.count)) - (offset*size.height)))
     }
     
     private func setupViews() {
-        viewControllers.forEach { addViewController($0) }
+        animatableControllers.forEach { addViewController($0.viewController) }
     }
     
     private func addViewController(_ viewController: UIViewController) {
@@ -60,17 +66,17 @@ public class ShepherdScrollView: UIScrollView {
     }
     
     private func setupConstraints() {
-        for (pos, viewController) in viewControllers.enumerated() {
+        for (pos, animatable) in animatableControllers.enumerated() {
             orientation == .horizontal ?
-                constraintHorizontally(viewController, pos: pos) :
-                constraintVertically(viewController, pos: pos)
+                constraintHorizontally(animatable.viewController, pos: pos) :
+                constraintVertically(animatable.viewController, pos: pos)
             }
     }
     
-    private func constraintHorizontally(_ viewController: BaseAnimatedViewController, pos: Int) {
+    private func constraintHorizontally(_ viewController: UIViewController, pos: Int) {
         addViewController(viewController)
         let multiplier = pos == 0 ? CGFloat(1-offset) : CGFloat(1.0)
-        let anchor = pos == 0 ? leadingAnchor : viewControllers[pos-1].view.trailingAnchor
+        let anchor = pos == 0 ? leadingAnchor : animatableControllers[pos-1].viewController.view.trailingAnchor
         NSLayoutConstraint.activate([
             viewController.view.heightAnchor.constraint(equalToConstant: size.height),
             viewController.view.widthAnchor.constraint(equalToConstant: size.width * multiplier),
@@ -78,11 +84,11 @@ public class ShepherdScrollView: UIScrollView {
             ])
     }
     
-    private func constraintVertically(_ viewController: BaseAnimatedViewController, pos: Int) {
+    private func constraintVertically(_ viewController: UIViewController, pos: Int) {
         addViewController(viewController)
     
         let multiplier = pos == 0 ? CGFloat(1-offset) : CGFloat(1.0)
-        let anchor = pos == 0 ? topAnchor : viewControllers[pos-1].view.bottomAnchor
+        let anchor = pos == 0 ? topAnchor : animatableControllers[pos-1].viewController.view.bottomAnchor
         NSLayoutConstraint.activate([
             viewController.view.heightAnchor.constraint(equalToConstant: size.height * multiplier),
             viewController.view.widthAnchor.constraint(equalToConstant: size.width),
@@ -99,15 +105,16 @@ public class ShepherdScrollView: UIScrollView {
 extension ShepherdScrollView: UIScrollViewDelegate {
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if contentOffset.y < 0 || contentOffset.x < 0 { setContentOffset(.zero, animated: false) }
-        guard (currentPos() + 1) < viewControllers.count else { return }
+        guard (currentPos() + 1) < animatableControllers.count else { return }
         animate(viewToAnimate, to: animationStep())
+        customDelegate?.scrollViewDidScroll(self)
     }
     
     private func animate
         (_ view: ViewToAnimate , to step: CGFloat) {
         view == .current ?
-            viewControllers[currentPos()].animate(step: step) :
-            viewControllers[currentPos()+1].animate(step: step)
+            animatableControllers[currentPos()].animate(step: step) :
+            animatableControllers[currentPos()+1].animate(step: step)
     }
     
     private func animationStep() -> CGFloat {

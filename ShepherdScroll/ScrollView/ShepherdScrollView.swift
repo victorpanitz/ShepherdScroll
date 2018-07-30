@@ -15,14 +15,22 @@ public protocol ShepherdScrollCustomDelegate: class {
 
 public class ShepherdScrollView: UIScrollView {
     
-    public lazy var animatableControllers = [Animatable]()
-    public lazy var size = CGSize()
-    public lazy var controller = UIViewController()
-    public lazy var viewToAnimate = ViewToAnimate.current
-    public lazy var orientation = Orientation.horizontal
-    public lazy var offset: CGFloat = 0.0
-    
+    public var animatableControllers = [Animatable]()
+    public var size = CGSize()
+    public var controller = UIViewController()
+    public var viewToAnimate = ViewToAnimate.current
+    public var orientation = Orientation.horizontal
+    public var offset: CGFloat = 0.0
     public weak var customDelegate: ShepherdScrollCustomDelegate?
+    
+    public var currentPosition: Int {
+        if orientation == .vertical { return Int(contentOffset.y/size.height) }
+        else { return Int(contentOffset.x/size.width) }
+    }
+    
+    public init() {
+        super.init(frame: .zero)
+    }
     
     public init(controller:UIViewController, viewControllers: [Animatable], size: CGSize, viewToAnimate: ViewToAnimate = .current, orientation: Orientation = .horizontal, offset: CGFloat = 0.0) {
         super.init(frame: .zero)
@@ -40,6 +48,14 @@ public class ShepherdScrollView: UIScrollView {
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    
+    // MARK: Private Methods
+    
+    private func reloadParameters() {
+        setupParameters()
+        setupViews()
+        setupConstraints()
     }
     
     private func setupParameters() {
@@ -96,25 +112,11 @@ public class ShepherdScrollView: UIScrollView {
             ])
     }
     
-    private func currentPos() -> Int {
-        if orientation == .vertical { return Int(contentOffset.y/size.height) }
-        else { return Int(contentOffset.x/size.width) }
-    }
-}
-
-extension ShepherdScrollView: UIScrollViewDelegate {
-    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if contentOffset.y < 0 || contentOffset.x < 0 { setContentOffset(.zero, animated: false) }
-        guard (currentPos() + 1) < animatableControllers.count else { return }
-        animate(viewToAnimate, to: animationStep())
-        customDelegate?.scrollViewDidScroll(self)
-    }
-    
     private func animate
         (_ view: ViewToAnimate , to step: CGFloat) {
         view == .current ?
-            animatableControllers[currentPos()].animate(step: step) :
-            animatableControllers[currentPos()+1].animate(step: step)
+            animatableControllers[currentPosition].animate(step: step) :
+            animatableControllers[currentPosition+1].animate(step: step)
     }
     
     private func animationStep() -> CGFloat {
@@ -122,13 +124,27 @@ extension ShepherdScrollView: UIScrollViewDelegate {
         else { return horizontalStep() }
     }
     
-    private func verticalStep() -> CGFloat {
+    // MARK: Public Methods
+    
+    public func verticalStep() -> CGFloat {
         let height = size.height
-        return (contentOffset.y - (CGFloat(currentPos()) * height))/height
+        return (contentOffset.y - (CGFloat(currentPosition) * height))/height
     }
     
-    private func horizontalStep() -> CGFloat {
+    public func horizontalStep() -> CGFloat {
         let width = size.width
-        return (contentOffset.x - (CGFloat(currentPos()) * width))/width
+        return (contentOffset.x - (CGFloat(currentPosition) * width))/width
+    }
+    
+}
+
+// MARK: - UIScrollViewDelegate
+
+extension ShepherdScrollView: UIScrollViewDelegate {
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if contentOffset.y < 0 || contentOffset.x < 0 { setContentOffset(.zero, animated: false) }
+        guard (currentPosition + 1) < animatableControllers.count else { return }
+        animate(viewToAnimate, to: animationStep())
+        customDelegate?.scrollViewDidScroll(self)
     }
 }

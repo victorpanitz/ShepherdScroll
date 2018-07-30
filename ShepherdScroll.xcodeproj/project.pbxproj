@@ -16,6 +16,7 @@
 		1624E31D210F5C18002E623F /* DemoAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1624E2F2210F5B3F002E623F /* DemoAViewController.swift */; };
 		1624E31E210F5C18002E623F /* DemoMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1624E2F0210F4E79002E623F /* DemoMainViewController.swift */; };
 		1624E31F210F5C18002E623F /* DemoCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1624E2F6210F5B56002E623F /* DemoCViewController.swift */; };
+		1624E324210FA3F2002E623F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1624E322210FA355002E623F /* Info.plist */; };
 		169D3D9A210A108F004859EE /* ShepherdScroll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 169D3D90210A108F004859EE /* ShepherdScroll.framework */; };
 		169D3D9F210A108F004859EE /* SheperdScrollTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169D3D9E210A108F004859EE /* SheperdScrollTests.swift */; };
 		169D3DA1210A108F004859EE /* ShepherdScroll.h in Headers */ = {isa = PBXBuildFile; fileRef = 169D3D93210A108F004859EE /* ShepherdScroll.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -54,12 +55,12 @@
 		1624E30F210F5C02002E623F /* DemoShepherdScrollTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoShepherdScrollTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1624E313210F5C02002E623F /* DemoShepherdScrollTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoShepherdScrollTests.swift; sourceTree = "<group>"; };
 		1624E315210F5C02002E623F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1624E322210FA355002E623F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		169D3D90210A108F004859EE /* ShepherdScroll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ShepherdScroll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		169D3D93210A108F004859EE /* ShepherdScroll.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShepherdScroll.h; sourceTree = "<group>"; };
 		169D3D94210A108F004859EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		169D3D99210A108F004859EE /* ShepherdScrollTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShepherdScrollTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		169D3D9E210A108F004859EE /* SheperdScrollTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheperdScrollTests.swift; sourceTree = "<group>"; };
-		169D3DA0210A108F004859EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		169D3DAE210A111A004859EE /* ShepherdScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShepherdScrollView.swift; path = ../../../../ShepherdScroll/ShepherdScroll/ScrollView/ShepherdScrollView.swift; sourceTree = "<group>"; };
 		169D3DBB210A271A004859EE /* Animatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animatable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -166,8 +167,8 @@
 		169D3D9D210A108F004859EE /* ShepherdScrollTests */ = {
 			isa = PBXGroup;
 			children = (
+				1624E322210FA355002E623F /* Info.plist */,
 				169D3D9E210A108F004859EE /* SheperdScrollTests.swift */,
-				169D3DA0210A108F004859EE /* Info.plist */,
 			);
 			path = ShepherdScrollTests;
 			sourceTree = "<group>";
@@ -349,6 +350,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1624E324210FA3F2002E623F /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -674,7 +676,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SheperdScrollTests/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ShepherdScrollTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -692,7 +694,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SheperdScrollTests/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ShepherdScrollTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

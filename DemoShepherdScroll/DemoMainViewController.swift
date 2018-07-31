@@ -17,11 +17,11 @@ class DemoMainViewController: UIViewController, Animatable {
         super.viewDidLoad()
         
         setupShepherdScroll()
-        setupConstraints()
+//        setupConstraints()
     }
     
     private func setupShepherdScroll() {
-        scrollView = ShepherdScrollView(
+        scrollView.setup(
             controller: self,
             viewControllers: [DemoAViewController(), DemoBViewController(), DemoCViewController()],
             size: view.frame.size,
@@ -29,9 +29,9 @@ class DemoMainViewController: UIViewController, Animatable {
             orientation: .vertical,
             offset: 0.0)
         
-        guard let `scrollView` = scrollView else { return }
-        view.addSubview(scrollView)
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
+//        guard let `scrollView` = scrollView else { return }
+//        view.addSubview(scrollView)
+//        scrollView.translatesAutoresizingMaskIntoConstraints = false
     }
     
     func animate(step: CGFloat) {}

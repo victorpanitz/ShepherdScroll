@@ -7,7 +7,7 @@
  #### 1. Add to your Podfile
 
 ```
-pod 'ShepherdScroll' ~> '0.1.1'
+pod 'ShepherdScroll' ~> '0.1.2'
 ```
 #### 2. Run pod install
 

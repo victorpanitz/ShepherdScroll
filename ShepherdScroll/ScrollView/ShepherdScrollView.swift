@@ -32,7 +32,7 @@ public class ShepherdScrollView: UIScrollView {
         super.init(frame: .zero)
     }
     
-    public init(controller:UIViewController, viewControllers: [Animatable], size: CGSize, viewToAnimate: ViewToAnimate = .current, orientation: Orientation = .horizontal, offset: CGFloat = 0.0) {
+    public init(controller: UIViewController, viewControllers: [Animatable], size: CGSize, viewToAnimate: ViewToAnimate = .current, orientation: Orientation = .horizontal, offset: CGFloat = 0.0) {
         super.init(frame: .zero)
         self.animatableControllers = viewControllers
         self.size = size
@@ -52,7 +52,7 @@ public class ShepherdScrollView: UIScrollView {
     
     // MARK: Private Methods
     
-    public func setup(controller:UIViewController, viewControllers: [Animatable], size: CGSize, viewToAnimate: ViewToAnimate = .current, orientation: Orientation = .horizontal, offset: CGFloat = 0.0) {
+    public func setup(controller: UIViewController, viewControllers: [Animatable], size: CGSize, viewToAnimate: ViewToAnimate = .current, orientation: Orientation = .horizontal, offset: CGFloat = 0.0) {
         self.animatableControllers = viewControllers
         self.size = size
         self.controller = controller
@@ -101,10 +101,12 @@ public class ShepherdScrollView: UIScrollView {
         let multiplier = pos == 0 ? CGFloat(1-offset) : CGFloat(1.0)
         let anchor = pos == 0 ? leadingAnchor : animatableControllers[pos-1].viewController.view.trailingAnchor
         NSLayoutConstraint.activate([
+            viewController.view.centerYAnchor.constraint(equalTo: centerYAnchor),
             viewController.view.heightAnchor.constraint(equalToConstant: size.height),
             viewController.view.widthAnchor.constraint(equalToConstant: size.width * multiplier),
             viewController.view.leadingAnchor.constraint(greaterThanOrEqualTo: anchor)
             ])
+        layoutIfNeeded()
     }
     
     private func constraintVertically(_ viewController: UIViewController, pos: Int) {
@@ -113,10 +115,12 @@ public class ShepherdScrollView: UIScrollView {
         let multiplier = pos == 0 ? CGFloat(1-offset) : CGFloat(1.0)
         let anchor = pos == 0 ? topAnchor : animatableControllers[pos-1].viewController.view.bottomAnchor
         NSLayoutConstraint.activate([
+            viewController.view.centerXAnchor.constraint(equalTo: centerXAnchor),
             viewController.view.heightAnchor.constraint(equalToConstant: size.height * multiplier),
             viewController.view.widthAnchor.constraint(equalToConstant: size.width),
             viewController.view.topAnchor.constraint(greaterThanOrEqualTo: anchor)
             ])
+        layoutIfNeeded()
     }
     
     private func animate

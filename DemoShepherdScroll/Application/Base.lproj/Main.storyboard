@@ -17,12 +17,24 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ze-8k-8TA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="7ze-8k-8TA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="FCD-ft-SEX"/>
+                            <constraint firstItem="7ze-8k-8TA" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="XLU-TP-xWU"/>
+                            <constraint firstItem="7ze-8k-8TA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jmo-6v-fzE"/>
+                            <constraint firstItem="7ze-8k-8TA" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="t9T-GN-NHz"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>

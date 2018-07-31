@@ -17,7 +17,7 @@ public class ShepherdScrollView: UIScrollView {
     
     public var animatableControllers = [Animatable]()
     public var size = CGSize()
-    public var controller = UIViewController()
+    private var controller = UIViewController()
     public var viewToAnimate = ViewToAnimate.current
     public var orientation = Orientation.horizontal
     public var offset: CGFloat = 0.0
@@ -52,7 +52,14 @@ public class ShepherdScrollView: UIScrollView {
     
     // MARK: Private Methods
     
-    private func reloadParameters() {
+    public func setup(controller:UIViewController, viewControllers: [Animatable], size: CGSize, viewToAnimate: ViewToAnimate = .current, orientation: Orientation = .horizontal, offset: CGFloat = 0.0) {
+        self.animatableControllers = viewControllers
+        self.size = size
+        self.controller = controller
+        self.viewToAnimate = viewToAnimate
+        self.orientation = orientation
+        self.offset = offset
+        
         setupParameters()
         setupViews()
         setupConstraints()

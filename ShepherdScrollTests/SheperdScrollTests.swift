@@ -41,22 +41,26 @@ class SheperdScrollTests: XCTestCase {
     func testVerticalStep() {
         guard let `scrollView` = scrollView else { return }
         
-        scrollView.contentOffset.y = 900
         if scrollView.orientation == .vertical {
+            scrollView.contentOffset.y = 900
             XCTAssert(round(1000*scrollView.verticalStep())/1000 == 0.349, "Not returning the correct step value to the current state os parameters")
         } else {
-            XCTAssert(scrollView.verticalStep() < 0, "Not returning the correct step value to the current state os parameters")
+            print("TEST \(round(1000*scrollView.verticalStep()))")
+
+            XCTAssert(round(1000*scrollView.verticalStep())/1000 == 0, "Not returning the correct step value to the current state os parameters")
         }
     }
     
     func testHorizontalStep() {
         guard let `scrollView` = scrollView else { return }
 
-        scrollView.contentOffset.x = 500
         if scrollView.orientation == .horizontal {
+            scrollView.contentOffset.x = 500
             XCTAssert(round(1000*scrollView.horizontalStep())/1000 == 0.333, "Not returning the correct step value to the current state os parameters")
         } else {
-            XCTAssert(round(1000*scrollView.horizontalStep()) < 0, "Not returning the correct step value to the current state os parameters")
+            print("TEST \(round(1000*scrollView.horizontalStep()))")
+
+            XCTAssert(round(1000*scrollView.horizontalStep())/1000 == 0, "Not returning the correct step value to the current state os parameters")
         }
     }
     

@@ -31,7 +31,8 @@ Create a standard UIViewController, import ShepherdScroll and inherit Animatable
 
 import UIKit
 import ShepherdScroll
-class SheepAViewController: UIViewController, Animatable {
+
+class SheepAViewController: UIViewController, Animatable { ... }
 ```
 Using Animatable you'll be able to control your own animation as you want! Exactly! Shepherd Scroll doesn't know what the view controller's content is, giving you the freedom to create animations, parallax and much more on your way.
 
@@ -41,8 +42,8 @@ To do that, call the method animate() where you'll receive a value between 0 and
 
 ```swift
 override func animate(step: CGFloat) {
-        label.alpha = 0.3 + step
-        label.transform = CGAffineTransform(scaleX: 1 + step, y: 1 + step)
+    label.alpha = 0.3 + step
+    label.transform = CGAffineTransform(scaleX: 1 + step, y: 1 + step)
             .concatenating(CGAffineTransform(translationX: 0, y: 200 * step))
 }
 ```
@@ -88,7 +89,7 @@ class SheepAViewController: UIViewController, Animatable {
             label.heightAnchor.constraint(equalToConstant: 50),
             label.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             label.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-            ])
+        ])
     }
 }
 ```
@@ -99,33 +100,30 @@ You have set up your Sheep as any basic UIViewController, but here's where the m
 In your main UIViewController you will add the ShepherdScrollView as any UIScrollView but setting some cool parameters.
 
 ```swift
-    private func setupShepherdScroll() {
-        scrollView = ShepherdScrollView(
-            controller: self,
-            viewControllers: [SheepAViewController(), SheepBViewController(), SheepCViewController()],
-            size: view.frame.size,
-            viewToAnimate: .next,
-            orientation: .vertical,
-            offset: 0.0)
-        
-        guard let `scrollView` = scrollView else { return }
-        view.addSubview(scrollView)
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-    }
+private func setupShepherdScroll() {
+    scrollView = ShepherdScrollView(
+        controller: self,
+        viewControllers: [SheepAViewController(), SheepBViewController(), SheepCViewController()],
+        size: view.frame.size,
+        viewToAnimate: .next,
+        orientation: .vertical,
+        offset: 0.0)
+
+    view.addSubview(scrollView)
+    scrollView.translatesAutoresizingMaskIntoConstraints = false
+}
 ```
 
 After that, just set the constraint to this component.
 ```swift
-private func setupConstraints() {
-        guard let `scrollView` = scrollView else { return }
-        
-        NSLayoutConstraint.activate([
-                scrollView.topAnchor.constraint(equalTo: view.topAnchor),
-                scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-                scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-            ])
-    }
+private func setupConstraints() {        
+    NSLayoutConstraint.activate([
+        scrollView.topAnchor.constraint(equalTo: view.topAnchor),
+        scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+    ])
+}
 ```
 
 > #### @  Check it out more details in the demo. @

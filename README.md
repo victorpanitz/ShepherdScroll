@@ -6,14 +6,17 @@ Shepherd Scroll implements a custom Scroll View which provides easy handling of 
  ## Installing
 1. Add to your Podfile
 
-```
-pod 'ShepherdScroll' ~> '0.1.1'
+
+```ruby
+pod 'ShepherdScroll' ~> '0.1.2'
 ```
 #### 2. Run pod install
 
 ## Shepherding the sheep
+
 After install your pod, import Shepherd Scroll to the UIViewController which the scroll will be embedded in (make sure you have builded your application before that).
-```
+
+```swift
 import ShepherdScroll
 ```
 > ##### we'll get back to this controller soon, but now let's create the sheep's! meeeh 
@@ -24,7 +27,8 @@ import ShepherdScroll
 Firstly you'd need an array of UIViewController which implements Animatable protocol. Wtsheep is that?
 > ##### Take it easy ma'friend.
 Create a standard UIViewController, import ShepherdScroll and inherit Animatable protocol to the UIViewController.
-```
+```swift
+
 import UIKit
 import ShepherdScroll
 class SheepAViewController: UIViewController, Animatable {
@@ -35,7 +39,7 @@ To do that, call the method animate() where you'll receive a value between 0 and
 
 > ### Use your imagination to do whatever you want with this percentage like translate images, views, animate graphs, change alpha's and much more.
 
-```
+```swift
 override func animate(step: CGFloat) {
         label.alpha = 0.3 + step
         label.transform = CGAffineTransform(scaleX: 1 + step, y: 1 + step)
@@ -46,7 +50,7 @@ override func animate(step: CGFloat) {
 
 > #### Here is the full example:
 
-```
+```swift
 import UIKit
 import ShepherdScroll
 
@@ -94,7 +98,7 @@ class SheepAViewController: UIViewController, Animatable {
 You have set up your Sheep as any basic UIViewController, but here's where the magic happens! 
 In your main UIViewController you will add the ShepherdScrollView as any UIScrollView but setting some cool parameters.
 
-```
+```swift
     private func setupShepherdScroll() {
         scrollView = ShepherdScrollView(
             controller: self,
@@ -111,7 +115,7 @@ In your main UIViewController you will add the ShepherdScrollView as any UIScrol
 ```
 
 After that, just set the constraint to this component.
-```
+```swift
 private func setupConstraints() {
         guard let `scrollView` = scrollView else { return }
         

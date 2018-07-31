@@ -1,10 +1,10 @@
 ![alt text](https://i.imgur.com/OCKpL18.jpg)
 
 ## Let me do the job for you
-##### Shepherd Scroll implements a custom Scroll View which provides easy handling of animation over child view controllers during the scroll.
+Shepherd Scroll implements a custom Scroll View which provides easy handling of animation over child view controllers during the scroll.
 
  ## Installing
- #### 1. Add to your Podfile
+1. Add to your Podfile
 
 ```
 pod 'ShepherdScroll' ~> '0.1.1'
@@ -12,7 +12,7 @@ pod 'ShepherdScroll' ~> '0.1.1'
 #### 2. Run pod install
 
 ## Shepherding the sheep
-##### After install your pod, import Shepherd Scroll to the UIViewController which the scroll will be embedded in (make sure you have builded your application before that).
+After install your pod, import Shepherd Scroll to the UIViewController which the scroll will be embedded in (make sure you have builded your application before that).
 ```
 import ShepherdScroll
 ```
@@ -21,17 +21,17 @@ import ShepherdScroll
 
 
 ### Ready to rock?
-##### Firstly you'd need an array of UIViewController which implements Animatable protocol. Wtsheep is that?
+Firstly you'd need an array of UIViewController which implements Animatable protocol. Wtsheep is that?
 > ##### Take it easy ma'friend.
-##### Create a standard UIViewController, import ShepherdScroll and inherit Animatable protocol to the UIViewController.
+Create a standard UIViewController, import ShepherdScroll and inherit Animatable protocol to the UIViewController.
 ```
 import UIKit
 import ShepherdScroll
 class SheepAViewController: UIViewController, Animatable {
 ```
-##### Using Animatable you'll be able to control your own animation as you want! Exactly! Shepherd Scroll doesn't know what the view controller's content is, giving you the freedom to create animations, parallax and much more on your way.
+Using Animatable you'll be able to control your own animation as you want! Exactly! Shepherd Scroll doesn't know what the view controller's content is, giving you the freedom to create animations, parallax and much more on your way.
 
-##### To do that, call the method animate() where you'll receive a value between 0 and 1. See this value as a timeline from 0% to 100% of the animation. With this value you'll get nice results during the scroll (no matter what direction you scroll). 
+To do that, call the method animate() where you'll receive a value between 0 and 1. See this value as a timeline from 0% to 100% of the animation. With this value you'll get nice results during the scroll (no matter what direction you scroll). 
 
 > ### Use your imagination to do whatever you want with this percentage like translate images, views, animate graphs, change alpha's and much more.
 
@@ -91,8 +91,8 @@ class SheepAViewController: UIViewController, Animatable {
 
 ### Le grand finale!
 > ##### context.restoreGState()
-##### You have set up your Sheep as any basic UIViewController, but here's where the magic happens! 
-##### In your main UIViewController you will add the ShepherdScrollView as any UIScrollView but setting some cool parameters.
+You have set up your Sheep as any basic UIViewController, but here's where the magic happens! 
+In your main UIViewController you will add the ShepherdScrollView as any UIScrollView but setting some cool parameters.
 
 ```
     private func setupShepherdScroll() {
@@ -110,7 +110,7 @@ class SheepAViewController: UIViewController, Animatable {
     }
 ```
 
-##### After that, just set the constraint to this component.
+After that, just set the constraint to this component.
 ```
 private func setupConstraints() {
         guard let `scrollView` = scrollView else { return }

@@ -74,7 +74,7 @@ class SheepAViewController: UIViewController, Animatable {
         setupLayout()
     }
 
-    override func animate(step: CGFloat) {
+    func animate(step: CGFloat) {
         label.alpha = 0.3 + step
         label.transform = CGAffineTransform(scaleX: 1 + step, y: 1 + step)
             .concatenating(CGAffineTransform(translationX: 0, y: 200 * step))

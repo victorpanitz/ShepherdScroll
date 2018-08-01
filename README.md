@@ -1,4 +1,4 @@
-![alt text](https://i.imgur.com/OCKpL18.jpg)
+!alt text](https://i.imgur.com/OCKpL18.jpg)
 
 ## Let me do the job for you
 Shepherd Scroll implements a custom Scroll View which provides easy handling of animation over child view controllers during the scroll.
@@ -8,7 +8,7 @@ Shepherd Scroll implements a custom Scroll View which provides easy handling of 
 
 
 ```ruby
-pod 'ShepherdScroll' ~> '0.1.4'
+pod 'ShepherdScroll' ~> '0.1.5'
 ```
 #### 2. Run pod install
 

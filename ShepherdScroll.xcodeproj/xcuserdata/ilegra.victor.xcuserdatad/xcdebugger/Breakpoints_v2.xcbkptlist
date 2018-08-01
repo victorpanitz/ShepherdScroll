@@ -17,53 +17,6 @@
             endingLineNumber = "50"
             landmarkName = "testVerticalStep()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ShepherdScrollTests.SheperdScrollTests.testVerticalStep() -&gt; ()"
-                  moduleName = "ShepherdScrollTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ilegra.victor/Documents/ShepherdScroll/ShepherdScrollTests/SheperdScrollTests.swift"
-                  timestampString = "554731576.739372"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "48"
-                  endingLineNumber = "48"
-                  offsetFromSymbolStart = "403">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "implicit closure #3 : @autoclosure () throws -&gt; Swift.Bool in ShepherdScrollTests.SheperdScrollTests.testVerticalStep() -&gt; ()"
-                  moduleName = "ShepherdScrollTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ilegra.victor/Documents/ShepherdScroll/ShepherdScrollTests/SheperdScrollTests.swift"
-                  timestampString = "554731576.741431"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "48"
-                  endingLineNumber = "48"
-                  offsetFromSymbolStart = "14">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "implicit closure #4 : @autoclosure () -&gt; Swift.String in ShepherdScrollTests.SheperdScrollTests.testVerticalStep() -&gt; ()"
-                  moduleName = "ShepherdScrollTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ilegra.victor/Documents/ShepherdScroll/ShepherdScrollTests/SheperdScrollTests.swift"
-                  timestampString = "554731576.7435941"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "48"
-                  endingLineNumber = "48"
-                  offsetFromSymbolStart = "4">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

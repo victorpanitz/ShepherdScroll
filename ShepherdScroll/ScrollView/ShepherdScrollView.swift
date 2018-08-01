@@ -9,14 +9,14 @@ public enum Orientation {
     case vertical, horizontal
 }
 
-public protocol ShepherdScrollCustomDelegate: class {
-    func scrollViewDidScroll(_ scrollView: UIScrollView)
-    func scrollViewDidScrollToTop(_ scrollView: UIScrollView)
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView)
-    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView)
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView)
-    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView)
-    func scrollViewDidChangeAdjustedContentInset(_ scrollView: UIScrollView)
+@objc public protocol ShepherdScrollCustomDelegate: class {
+    @objc optional func scrollViewDidScroll(_ scrollView: UIScrollView)
+    @objc optional func scrollViewDidScrollToTop(_ scrollView: UIScrollView)
+    @objc optional func scrollViewWillBeginDragging(_ scrollView: UIScrollView)
+    @objc optional func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView)
+    @objc optional func scrollViewDidEndDecelerating(_ scrollView: UIScrollView)
+    @objc optional func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView)
+    @objc optional func scrollViewDidChangeAdjustedContentInset(_ scrollView: UIScrollView)
 }
 
 public class ShepherdScrollView: UIScrollView {
@@ -129,11 +129,17 @@ public class ShepherdScrollView: UIScrollView {
         layoutIfNeeded()
     }
     
-    private func animate
-        (_ view: ViewToAnimate , to step: CGFloat) {
-        view == .current ?
-            animatableControllers[currentPosition].animate(step: step) :
-            animatableControllers[currentPosition+1].animate(step: step)
+    private func animate(_ view: ViewToAnimate , to step: CGFloat) {
+        switch view {
+        case .current:
+            animatableControllers[currentPosition].animate(step: step)
+        case .next:
+            if (currentPosition + 1) >= animatableControllers.count {
+                break
+            } else{
+                animatableControllers[currentPosition+1].animate(step: step)
+            }
+        }
     }
     
     private func animationStep() -> CGFloat {
@@ -158,34 +164,35 @@ public class ShepherdScrollView: UIScrollView {
 // MARK: - UIScrollViewDelegate
 
 extension ShepherdScrollView: UIScrollViewDelegate {
-    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    @objc public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if contentOffset.y < 0 || contentOffset.x < 0 { setContentOffset(.zero, animated: false) }
         guard (currentPosition + 1) <= animatableControllers.count else { return }
         animate(viewToAnimate, to: animationStep())
-        customDelegate?.scrollViewDidScroll(self)
+        
+        customDelegate?.scrollViewDidScroll?(self)
     }
     
-    public func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {
-        customDelegate?.scrollViewDidScrollToTop(self)
+    @objc public func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {
+        customDelegate?.scrollViewDidScrollToTop?(self)
     }
     
-    public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        customDelegate?.scrollViewWillBeginDragging(self)
+    @objc public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        customDelegate?.scrollViewWillBeginDragging?(self)
     }
     
-    public func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
-        customDelegate?.scrollViewDidEndScrollingAnimation(self)
+    @objc public func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        customDelegate?.scrollViewDidEndScrollingAnimation?(self)
     }
     
-    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        customDelegate?.scrollViewDidEndDecelerating(self)
+    @objc public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        customDelegate?.scrollViewDidEndDecelerating?(self)
     }
     
-    public func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
-        customDelegate?.scrollViewWillBeginDecelerating(self)
+    @objc public func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+        customDelegate?.scrollViewWillBeginDecelerating?(self)
     }
     
-    public func scrollViewDidChangeAdjustedContentInset(_ scrollView: UIScrollView) {
-        customDelegate?.scrollViewDidChangeAdjustedContentInset(self)
+    @objc public func scrollViewDidChangeAdjustedContentInset(_ scrollView: UIScrollView) {
+        customDelegate?.scrollViewDidChangeAdjustedContentInset?(self)
     }
 }

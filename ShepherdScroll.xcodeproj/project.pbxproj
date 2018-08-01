@@ -16,10 +16,10 @@
 		1624E31E210F5C18002E623F /* DemoMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1624E2F0210F4E79002E623F /* DemoMainViewController.swift */; };
 		1624E31F210F5C18002E623F /* DemoCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1624E2F6210F5B56002E623F /* DemoCViewController.swift */; };
 		1624E324210FA3F2002E623F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1624E322210FA355002E623F /* Info.plist */; };
+		1639B3E62112460A008809C4 /* ShepherdScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1639B3E52112460A008809C4 /* ShepherdScrollView.swift */; };
 		169D3D9A210A108F004859EE /* ShepherdScroll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 169D3D90210A108F004859EE /* ShepherdScroll.framework */; };
 		169D3D9F210A108F004859EE /* SheperdScrollTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169D3D9E210A108F004859EE /* SheperdScrollTests.swift */; };
 		169D3DA1210A108F004859EE /* ShepherdScroll.h in Headers */ = {isa = PBXBuildFile; fileRef = 169D3D93210A108F004859EE /* ShepherdScroll.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		169D3DAF210A111A004859EE /* ShepherdScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169D3DAE210A111A004859EE /* ShepherdScrollView.swift */; };
 		169D3DBC210A271A004859EE /* Animatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169D3DBB210A271A004859EE /* Animatable.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +45,7 @@
 		1624E308210F5C01002E623F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1624E30A210F5C01002E623F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1624E322210FA355002E623F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1639B3E52112460A008809C4 /* ShepherdScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShepherdScrollView.swift; path = ShepherdScroll/ScrollView/ShepherdScrollView.swift; sourceTree = "<group>"; };
 		169D3D90210A108F004859EE /* ShepherdScroll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ShepherdScroll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		169D3D93210A108F004859EE /* ShepherdScroll.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShepherdScroll.h; sourceTree = "<group>"; };
 		169D3D94210A108F004859EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -107,6 +108,7 @@
 		169D3D86210A108F004859EE = {
 			isa = PBXGroup;
 			children = (
+				1639B3E52112460A008809C4 /* ShepherdScrollView.swift */,
 				169D3D92210A108F004859EE /* ShepherdScroll */,
 				169D3D9D210A108F004859EE /* ShepherdScrollTests */,
 				1624E2FD210F5C00002E623F /* DemoShepherdScroll */,
@@ -314,8 +316,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1639B3E62112460A008809C4 /* ShepherdScrollView.swift in Sources */,
 				169D3DBC210A271A004859EE /* Animatable.swift in Sources */,
-				169D3DAF210A111A004859EE /* ShepherdScrollView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -46,5 +46,4 @@ class DemoMainViewController: UIViewController, Animatable {
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
             ])
     }
-    
 }

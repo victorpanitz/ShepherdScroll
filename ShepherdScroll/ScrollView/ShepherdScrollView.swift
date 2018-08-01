@@ -11,6 +11,12 @@ public enum Orientation {
 
 public protocol ShepherdScrollCustomDelegate: class {
     func scrollViewDidScroll(_ scrollView: UIScrollView)
+    func scrollViewDidScrollToTop(_ scrollView: UIScrollView)
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView)
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView)
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView)
+    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView)
+    func scrollViewDidChangeAdjustedContentInset(_ scrollView: UIScrollView)
 }
 
 public class ShepherdScrollView: UIScrollView {
@@ -154,8 +160,32 @@ public class ShepherdScrollView: UIScrollView {
 extension ShepherdScrollView: UIScrollViewDelegate {
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if contentOffset.y < 0 || contentOffset.x < 0 { setContentOffset(.zero, animated: false) }
-        guard (currentPosition + 1) < animatableControllers.count else { return }
+        guard (currentPosition + 1) <= animatableControllers.count else { return }
         animate(viewToAnimate, to: animationStep())
         customDelegate?.scrollViewDidScroll(self)
+    }
+    
+    public func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {
+        customDelegate?.scrollViewDidScrollToTop(self)
+    }
+    
+    public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        customDelegate?.scrollViewWillBeginDragging(self)
+    }
+    
+    public func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        customDelegate?.scrollViewDidEndScrollingAnimation(self)
+    }
+    
+    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        customDelegate?.scrollViewDidEndDecelerating(self)
+    }
+    
+    public func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+        customDelegate?.scrollViewWillBeginDecelerating(self)
+    }
+    
+    public func scrollViewDidChangeAdjustedContentInset(_ scrollView: UIScrollView) {
+        customDelegate?.scrollViewDidChangeAdjustedContentInset(self)
     }
 }

@@ -11,7 +11,6 @@
 		1624E304210F5C00002E623F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1624E302210F5C00002E623F /* Main.storyboard */; };
 		1624E306210F5C01002E623F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1624E305210F5C01002E623F /* Assets.xcassets */; };
 		1624E309210F5C01002E623F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1624E307210F5C01002E623F /* LaunchScreen.storyboard */; };
-		1624E314210F5C02002E623F /* DemoShepherdScrollTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1624E313210F5C02002E623F /* DemoShepherdScrollTests.swift */; };
 		1624E31C210F5C18002E623F /* DemoBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1624E2F4210F5B4B002E623F /* DemoBViewController.swift */; };
 		1624E31D210F5C18002E623F /* DemoAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1624E2F2210F5B3F002E623F /* DemoAViewController.swift */; };
 		1624E31E210F5C18002E623F /* DemoMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1624E2F0210F4E79002E623F /* DemoMainViewController.swift */; };
@@ -25,13 +24,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1624E310210F5C02002E623F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 169D3D87210A108F004859EE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1624E2FB210F5C00002E623F;
-			remoteInfo = DemoShepherdScroll;
-		};
 		169D3D9B210A108F004859EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 169D3D87210A108F004859EE /* Project object */;
@@ -52,28 +44,18 @@
 		1624E305210F5C01002E623F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1624E308210F5C01002E623F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1624E30A210F5C01002E623F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1624E30F210F5C02002E623F /* DemoShepherdScrollTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoShepherdScrollTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1624E313210F5C02002E623F /* DemoShepherdScrollTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoShepherdScrollTests.swift; sourceTree = "<group>"; };
-		1624E315210F5C02002E623F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1624E322210FA355002E623F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		169D3D90210A108F004859EE /* ShepherdScroll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ShepherdScroll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		169D3D93210A108F004859EE /* ShepherdScroll.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShepherdScroll.h; sourceTree = "<group>"; };
 		169D3D94210A108F004859EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		169D3D99210A108F004859EE /* ShepherdScrollTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShepherdScrollTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		169D3D9E210A108F004859EE /* SheperdScrollTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheperdScrollTests.swift; sourceTree = "<group>"; };
-		169D3DAE210A111A004859EE /* ShepherdScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShepherdScrollView.swift; path = ../../../../ShepherdScroll/ShepherdScroll/ScrollView/ShepherdScrollView.swift; sourceTree = "<group>"; };
+		169D3DAE210A111A004859EE /* ShepherdScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShepherdScrollView.swift; path = ShepherdScroll/ScrollView/ShepherdScrollView.swift; sourceTree = "<group>"; };
 		169D3DBB210A271A004859EE /* Animatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animatable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		1624E2F9210F5C00002E623F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1624E30C210F5C02002E623F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -110,15 +92,6 @@
 			path = DemoShepherdScroll;
 			sourceTree = "<group>";
 		};
-		1624E312210F5C02002E623F /* DemoShepherdScrollTests */ = {
-			isa = PBXGroup;
-			children = (
-				1624E313210F5C02002E623F /* DemoShepherdScrollTests.swift */,
-				1624E315210F5C02002E623F /* Info.plist */,
-			);
-			path = DemoShepherdScrollTests;
-			sourceTree = "<group>";
-		};
 		1624E320210F76B4002E623F /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,7 +110,6 @@
 				169D3D92210A108F004859EE /* ShepherdScroll */,
 				169D3D9D210A108F004859EE /* ShepherdScrollTests */,
 				1624E2FD210F5C00002E623F /* DemoShepherdScroll */,
-				1624E312210F5C02002E623F /* DemoShepherdScrollTests */,
 				169D3D91210A108F004859EE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -148,7 +120,6 @@
 				169D3D90210A108F004859EE /* ShepherdScroll.framework */,
 				169D3D99210A108F004859EE /* ShepherdScrollTests.xctest */,
 				1624E2FC210F5C00002E623F /* DemoShepherdScroll.app */,
-				1624E30F210F5C02002E623F /* DemoShepherdScrollTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -221,24 +192,6 @@
 			productReference = 1624E2FC210F5C00002E623F /* DemoShepherdScroll.app */;
 			productType = "com.apple.product-type.application";
 		};
-		1624E30E210F5C02002E623F /* DemoShepherdScrollTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1624E319210F5C02002E623F /* Build configuration list for PBXNativeTarget "DemoShepherdScrollTests" */;
-			buildPhases = (
-				1624E30B210F5C02002E623F /* Sources */,
-				1624E30C210F5C02002E623F /* Frameworks */,
-				1624E30D210F5C02002E623F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1624E311210F5C02002E623F /* PBXTargetDependency */,
-			);
-			name = DemoShepherdScrollTests;
-			productName = DemoShepherdScrollTests;
-			productReference = 1624E30F210F5C02002E623F /* DemoShepherdScrollTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		169D3D8F210A108F004859EE /* ShepherdScroll */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 169D3DA4210A108F004859EE /* Build configuration list for PBXNativeTarget "ShepherdScroll" */;
@@ -288,10 +241,6 @@
 					1624E2FB210F5C00002E623F = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
-					1624E30E210F5C02002E623F = {
-						CreatedOnToolsVersion = 9.4.1;
-						TestTargetID = 1624E2FB210F5C00002E623F;
-					};
 					169D3D8F210A108F004859EE = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
@@ -316,7 +265,6 @@
 				169D3D8F210A108F004859EE /* ShepherdScroll */,
 				169D3D98210A108F004859EE /* ShepherdScrollTests */,
 				1624E2FB210F5C00002E623F /* DemoShepherdScroll */,
-				1624E30E210F5C02002E623F /* DemoShepherdScrollTests */,
 			);
 		};
 /* End PBXProject section */
@@ -329,13 +277,6 @@
 				1624E309210F5C01002E623F /* LaunchScreen.storyboard in Resources */,
 				1624E306210F5C01002E623F /* Assets.xcassets in Resources */,
 				1624E304210F5C00002E623F /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1624E30D210F5C02002E623F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,14 +310,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1624E30B210F5C02002E623F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1624E314210F5C02002E623F /* DemoShepherdScrollTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		169D3D8B210A108F004859EE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -397,11 +330,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1624E311210F5C02002E623F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1624E2FB210F5C00002E623F /* DemoShepherdScroll */;
-			targetProxy = 1624E310210F5C02002E623F /* PBXContainerItemProxy */;
-		};
 		169D3D9C210A108F004859EE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 169D3D8F210A108F004859EE /* ShepherdScroll */;
@@ -460,46 +388,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		1624E31A210F5C02002E623F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = DemoShepherdScrollTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = Victor.Magalhaes.iOSDeveloper.DemoShepherdScrollTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemoShepherdScroll.app/DemoShepherdScroll";
-			};
-			name = Debug;
-		};
-		1624E31B210F5C02002E623F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = DemoShepherdScrollTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = Victor.Magalhaes.iOSDeveloper.DemoShepherdScrollTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemoShepherdScroll.app/DemoShepherdScroll";
 			};
 			name = Release;
 		};
@@ -715,15 +603,6 @@
 			buildConfigurations = (
 				1624E317210F5C02002E623F /* Debug */,
 				1624E318210F5C02002E623F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1624E319210F5C02002E623F /* Build configuration list for PBXNativeTarget "DemoShepherdScrollTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1624E31A210F5C02002E623F /* Debug */,
-				1624E31B210F5C02002E623F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

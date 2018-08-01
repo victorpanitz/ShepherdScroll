@@ -8,7 +8,7 @@ Shepherd Scroll implements a custom Scroll View which provides easy handling of 
 
 
 ```ruby
-pod 'ShepherdScroll' ~> '0.1.3'
+pod 'ShepherdScroll' ~> '0.1.4'
 ```
 #### 2. Run pod install
 

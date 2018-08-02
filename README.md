@@ -1,4 +1,4 @@
-!alt text](https://i.imgur.com/OCKpL18.jpg)
+![alt text](https://i.imgur.com/OCKpL18.jpg)
 
 ## Let me do the job for you
 Shepherd Scroll implements a custom Scroll View which provides easy handling of animation over child view controllers during the scroll.

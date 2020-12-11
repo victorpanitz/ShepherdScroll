@@ -51,7 +51,7 @@
 		169D3D94210A108F004859EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		169D3D99210A108F004859EE /* ShepherdScrollTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShepherdScrollTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		169D3D9E210A108F004859EE /* SheperdScrollTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheperdScrollTests.swift; sourceTree = "<group>"; };
-		169D3DAE210A111A004859EE /* ShepherdScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShepherdScrollView.swift; path = ShepherdScroll/ScrollView/ShepherdScrollView.swift; sourceTree = "<group>"; };
+		169D3DAE210A111A004859EE /* ShepherdScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShepherdScrollView.swift; sourceTree = "<group>"; };
 		169D3DBB210A271A004859EE /* Animatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animatable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,8 +151,7 @@
 			children = (
 				169D3DAE210A111A004859EE /* ShepherdScrollView.swift */,
 			);
-			name = ScrollView;
-			path = ../../../Documents/animatedscrollviewcontroller/ScrollViewTests/Application/ScrollView;
+			path = ScrollView;
 			sourceTree = "<group>";
 		};
 		169D3DB8210A266B004859EE /* Animatable */ = {
@@ -524,6 +523,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "$(SRCROOT)/ShepherdScroll/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -532,6 +532,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Victor.Magalhaes.iOSDeveloper.SheperdScroll;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -548,6 +549,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "$(SRCROOT)/ShepherdScroll/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -556,6 +558,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Victor.Magalhaes.iOSDeveloper.SheperdScroll;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
